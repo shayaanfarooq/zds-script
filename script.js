@@ -1,5 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 window.addEventListener("load", () => {
   // generic / common
   const appearFromTween = {
@@ -274,7 +278,6 @@ window.addEventListener("load", () => {
       heading,
       {
         opacity: 0,
-        // y: 50, // Adjust the Y movement as needed
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
@@ -294,7 +297,7 @@ window.addEventListener("load", () => {
 
     const zblock = heading.querySelector(".zblock");
     if (zblock) {
-      zblock.set({ opacity: 1 });
+      gsap.set(zblock, { opacity: 1 });
       headingTl.from(zblock, {
         rotate: -90,
         duration: 1,
@@ -311,13 +314,6 @@ window.addEventListener("load", () => {
     tagName: "span",
   });
 
-  // project page
 
-  //   gsap.from(".project_name .zblock", {
-  //     rotate: -90,
-  //     duration: 1,
-  //     delay: 1,
-  //     ease: "power2.out",
-  //   });
   ScrollTrigger.refresh();
 });
