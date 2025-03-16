@@ -205,7 +205,6 @@ window.addEventListener("load", () => {
   });
 
   // ============== MILESTONE ========
-
   gsap.from(".milestone-item", {
     ...appearFromTween,
     scrollTrigger: {
@@ -238,7 +237,6 @@ window.addEventListener("load", () => {
   });
 
   // ==== QUOTE SECTION
-
   gsap.from(".quote-section .zblock", {
     rotate: -90,
     scrollTrigger: {
